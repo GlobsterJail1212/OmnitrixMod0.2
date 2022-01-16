@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "omnitrixmod:superconductivepowder"
+    },
+    {
+      "item": "minecraft:water_bucket"
+    }
+  ],
+  "result":
+    {
+    "item": "omnitrixmod:superconductivepaste",
+    "count": 1
+  }
+}

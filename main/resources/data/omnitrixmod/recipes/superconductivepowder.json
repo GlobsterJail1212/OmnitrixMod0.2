@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "omnitrixmod:superconductiverod"
+    }
+  ],
+  "result": {
+    "item": "omnitrixmod:superconductivepowder",
+    "count": 2
+  }
+}
