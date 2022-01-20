@@ -1,12 +1,12 @@
 package com.mod.omnitrixmod.world.gen;
 
 import com.mod.omnitrixmod.blocks.ModBlocks;
-import jdk.nashorn.internal.ir.Block;
+import net.minecraft.block.Block;
 import net.minecraftforge.common.util.Lazy;
 
 public enum OreType {
 
-    ZIRCONIUM(Lazy.of(ModBlocks.ZIRCONIUM_ORE), 8, 25, 50);
+    ZIRCONIUM(Lazy.of(ModBlocks.ZIRCONIUMORE), 8, 25, 50);
 
     private final Lazy<Block> block;
     private final int maxVeinSize;

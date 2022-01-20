@@ -13,11 +13,11 @@ import net.minecraft.world.gen.placement.TopSolidRangeConfig;
 import net.minecraftforge.event.world.BiomeLoadingEvent;
 
 public class OreGeneration {
-    public static void generateOres(final BiomeLoadingEvent event){
+   public static void generateOres(final BiomeLoadingEvent event){
         for (OreType ore: OreType.values()) {
             OreFeatureConfig oreFeatureConfig = new OreFeatureConfig(
                     OreFeatureConfig.FillerBlockType.NATURAL_STONE,
-                    (BlockState) ore.getBlock().get().getStatements(), ore.getMaxVeinSize());
+                    (BlockState) ore.getBlock().get().defaultBlockState(), ore.getMaxVeinSize());
 
             ConfiguredPlacement<TopSolidRangeConfig> configuredPlacement = Placement.RANGE.configured(
                     new TopSolidRangeConfig(ore.getMinHeight(), ore.getMinHeight(), ore.getMaxHeight()));
@@ -31,7 +31,7 @@ public class OreGeneration {
 
     private static ConfiguredFeature<?, ?> registerOreFeature(OreType ore, OreFeatureConfig oreFeatureConfig,
                                                               ConfiguredPlacement configuredPlacement){
-        return Registry.register(WorldGenRegistries.CONFIGURED_FEATURE, ore.getBlock().get().toString(),
+        return Registry.register(WorldGenRegistries.CONFIGURED_FEATURE, ore.getBlock().get().getRegistryName(),
                 Feature.ORE.configured(oreFeatureConfig).place(configuredPlacement)
                         .square().count(2));
     }
